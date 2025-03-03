@@ -7,7 +7,6 @@ public class door2Script : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
 
     {
-        //doesnt work
         HeroKnight controller = other.GetComponent<HeroKnight>();
 
         if (controller != null)
