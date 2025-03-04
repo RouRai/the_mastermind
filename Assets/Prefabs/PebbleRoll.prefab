@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7015019330918479016}
   - component: {fileID: 5766776589030973596}
   - component: {fileID: -250255084542453430}
+  - component: {fileID: 2504304853391806728}
   m_Layer: 0
   m_Name: PebbleRoll
   m_TagString: Untagged
@@ -170,3 +171,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2504304853391806728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348302008659861837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ba633858303447085d2663f3a158b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
