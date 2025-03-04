@@ -26,6 +26,12 @@ public class HeroKnight : MonoBehaviour {
     private float               m_rollDuration = 8.0f / 14.0f;
     private float               m_rollCurrentTime;
 
+    public int currentHealth = 5;
+    public int maxHealth = 5;
+    private bool isInvincible;
+    private float invincibleTimer;
+    public float timeInvincible = 2.0f;
+
 
     // Use this for initialization
     void Start ()
@@ -171,6 +177,20 @@ public class HeroKnight : MonoBehaviour {
                 if(m_delayToIdle < 0)
                     m_animator.SetInteger("AnimState", 0);
         }
+        
+        if (!isInvincible)
+        {
+            return;
+        }
+
+        invincibleTimer -= Time.deltaTime;
+
+        if (invincibleTimer >= 0)
+        {
+            return;
+        }
+
+        isInvincible = false;
     }
 
     // Animation Events
@@ -190,6 +210,28 @@ public class HeroKnight : MonoBehaviour {
             GameObject dust = Instantiate(m_slideDust, spawnPosition, gameObject.transform.localRotation) as GameObject;
             // Turn arrow in correct direction
             dust.transform.localScale = new Vector3(m_facingDirection, 1, 1);
+        }
+    }
+
+    public void ChangeHealth(int amount)
+    {
+        if (amount < 0)
+        {
+            m_animator.SetTrigger("Hurt");
+
+            if (isInvincible) { return; }
+
+            isInvincible = true;
+
+            invincibleTimer = timeInvincible;
+        }
+
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+
+        if (currentHealth < 1)
+        {
+            m_animator.SetBool("noBlood", m_noBlood);
+            m_animator.SetTrigger("Death");
         }
     }
 }
