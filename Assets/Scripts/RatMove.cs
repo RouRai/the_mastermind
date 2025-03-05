@@ -31,6 +31,8 @@ public class RatMove : MonoBehaviour
                                         speed);
         Debug.Log(waypoints[cur].position);
         GetComponent<Rigidbody2D>().MovePosition(p);
+        Debug.Log(waypoints[cur].position);
+        Debug.Log(transform.position);
     }
     // Waypoint reached, select next one
     else cur = (cur + 1) % waypoints.Length;
