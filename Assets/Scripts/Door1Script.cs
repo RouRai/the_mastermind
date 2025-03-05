@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class door2Script : MonoBehaviour
+
+public class door1Script : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
 
@@ -11,11 +12,8 @@ public class door2Script : MonoBehaviour
         HeroKnight controller = other.GetComponent<HeroKnight>();
 
         if (controller != null)
-
         {
-
-            SceneManager.LoadScene("LevelThree");
-
+            SceneManager.LoadScene("LevelTwo");
         }
 
     }
