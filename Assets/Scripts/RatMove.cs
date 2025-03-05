@@ -25,14 +25,15 @@ public class RatMove : MonoBehaviour
 
     void FixedUpdate () {
     // Waypoint not reached yet? then move closer
-    if (transform.position != waypoints[cur].position) {
+    if (Vector2.Distance(transform.position, waypoints[cur].position) > 0.1) {
         Vector2 p = Vector2.MoveTowards(transform.position,
                                         waypoints[cur].position,
                                         speed);
-        Debug.Log(waypoints[cur].position);
         GetComponent<Rigidbody2D>().MovePosition(p);
         Debug.Log(waypoints[cur].position);
         Debug.Log(transform.position);
+        Debug.Log(cur);
+        Debug.Log((cur + 1) % waypoints.Length);
     }
     // Waypoint reached, select next one
     else cur = (cur + 1) % waypoints.Length;
