@@ -31,7 +31,7 @@ public class HeroKnight : MonoBehaviour {
     private bool isInvincible;
     private float invincibleTimer;
     public float timeInvincible = 2.0f;
-
+    Vector2 lookDirection = new Vector2(1, 0);
 
     // Use this for initialization
     void Start ()
@@ -48,8 +48,39 @@ public class HeroKnight : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        // Increase timer that controls attack combo
-        m_timeSinceAttack += Time.deltaTime;
+        if(m_facingDirection == -1)
+        {
+            lookDirection.Set(-1.0f, 0.0f);
+            
+        }
+        else if(m_facingDirection == 1)
+        {
+            lookDirection.Set(1.0f, 0.0f);
+            
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+
+        {
+
+            
+            RaycastHit2D hit = Physics2D.Raycast(m_body2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("npc"));
+
+            if (hit.collider != null)
+
+            {
+                
+                ducknpcScript character = hit.collider.GetComponent<ducknpcScript>();
+                //PlaySound(chatClip);
+                if (character != null)
+
+                {
+                    character.DisplayDialog();
+
+                }
+            }
+        }
+            // Increase timer that controls attack combo
+            m_timeSinceAttack += Time.deltaTime;
 
         // Increase timer that checks roll duration
         if(m_rolling)
