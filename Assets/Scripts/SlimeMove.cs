@@ -25,18 +25,30 @@ public class SlimeMove : MonoBehaviour
 
     void FixedUpdate () {
     // Waypoint not reached yet? then move closer
-    if (Vector2.Distance(transform.position, waypoints[cur].position) > 0.1) {
-        Vector2 p = Vector2.MoveTowards(transform.position,
-                                        waypoints[cur].position,
-                                        speed);
-        GetComponent<Rigidbody2D>().MovePosition(p);
-        Debug.Log(waypoints[cur].position);
-        Debug.Log(transform.position);
-        Debug.Log(cur);
-        Debug.Log((cur + 1) % waypoints.Length);
-    }
+        if (Vector2.Distance(transform.position, waypoints[cur].position) > 0.1) {
+            Vector2 p = Vector2.MoveTowards(transform.position,
+                                            waypoints[cur].position,
+                                            speed);
+            GetComponent<Rigidbody2D>().MovePosition(p);
+            Debug.Log(waypoints[cur].position);
+            Debug.Log(transform.position);
+            Debug.Log(cur);
+            Debug.Log((cur + 1) % waypoints.Length);
+        }
     // Waypoint reached, select next one
-    else cur = (cur + 1) % waypoints.Length;
-}
+        else cur = (cur + 1) % waypoints.Length;
+    }
+    
+    void OnTriggerEnter2D (Collider2D other)
+    {
+        HeroKnight controller = other.GetComponent<HeroKnight>();
+        
+        if (controller == null)
+        {
+            return;
+        }
+
+        controller.ChangeHealth(-2);
+    }
 
 }

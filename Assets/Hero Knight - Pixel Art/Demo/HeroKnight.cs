@@ -30,7 +30,7 @@ public class HeroKnight : MonoBehaviour {
     public int maxHealth = 5;
     private bool isInvincible;
     private float invincibleTimer;
-    public float timeInvincible = 2.0f;
+    public float timeInvincible = 1.0f;
 
 
     // Use this for initialization
@@ -217,9 +217,9 @@ public class HeroKnight : MonoBehaviour {
     {
         if (amount < 0)
         {
-            m_animator.SetTrigger("Hurt");
-
             if (isInvincible) { return; }
+            
+            m_animator.SetTrigger("Hurt");
 
             isInvincible = true;
 
