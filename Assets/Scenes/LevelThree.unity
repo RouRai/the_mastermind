@@ -39659,6 +39659,7 @@ GameObject:
   - component: {fileID: 555221293}
   - component: {fileID: 555221292}
   - component: {fileID: 555221291}
+  - component: {fileID: 555221295}
   m_Layer: 0
   m_Name: rubble
   m_TagString: Untagged
@@ -39936,6 +39937,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &555221295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555221290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab603a8e2003d314d9ebe8de2097a29b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &712385968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8413529789942519730, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
