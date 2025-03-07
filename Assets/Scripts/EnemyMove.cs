@@ -13,11 +13,14 @@ public class EnemyMove : MonoBehaviour
     public int damageDealt = 2;
     public int health;
     Rigidbody2D rb;
+    
+    private Animator _mAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        _mAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -53,6 +56,7 @@ public class EnemyMove : MonoBehaviour
     public void Slashed(int damage)
     {
         health -= damage;
+        _mAnimator.SetTrigger("Hit");
         if (health < 1)
         {
             Destroy(gameObject);
