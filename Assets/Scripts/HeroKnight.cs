@@ -158,7 +158,7 @@ public class HeroKnight : MonoBehaviour {
 
                 {
 
-                    enemy.Slashed(2);
+                    enemy.Slashed(Mathf.Clamp(currentHealth - 1, 1, maxHealth - 1));
 
                 } 
 
