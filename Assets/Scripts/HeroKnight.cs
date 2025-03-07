@@ -129,7 +129,7 @@ public class HeroKnight : MonoBehaviour {
 
                 {
 
-                    enemy.Slashed(2);
+                    enemy.Slashed(currentHealth);
 
                 } 
 
