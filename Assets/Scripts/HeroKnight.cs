@@ -37,6 +37,8 @@ public class HeroKnight : MonoBehaviour {
 
     public AudioSource backgroundAudio;
     public AudioSource duckAudio;
+
+    private UIScript control;
     // Use this for initialization
     void Start ()
     {
@@ -62,7 +64,7 @@ public class HeroKnight : MonoBehaviour {
         {
             return;
         }
-        UIScript control = userinterface.GetComponent<UIScript>();
+        control = userinterface.GetComponent<UIScript>();
         control.updateHealth(currentHealth);
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
@@ -293,6 +295,8 @@ public class HeroKnight : MonoBehaviour {
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        
+        control.updateHealth(currentHealth);
 
         if (currentHealth < 1)
         {
