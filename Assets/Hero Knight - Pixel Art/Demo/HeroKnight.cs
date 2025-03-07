@@ -6,7 +6,7 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] float      m_speed = 4.0f;
     [SerializeField] float      m_jumpForce = 7.5f;
     [SerializeField] float      m_rollForce = 6.0f;
-    [SerializeField] bool       m_noBlood = false;
+    [SerializeField] bool       m_noBlood = true;
     [SerializeField] GameObject m_slideDust;
 
     private Animator            m_animator;
@@ -31,6 +31,7 @@ public class HeroKnight : MonoBehaviour {
     private bool isInvincible;
     private float invincibleTimer;
     public float timeInvincible = 1.0f;
+    public GameObject slashPrefab;
 
 
     // Use this for initialization
@@ -115,6 +116,7 @@ public class HeroKnight : MonoBehaviour {
         //Attack
         else if(Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !m_rolling)
         {
+            Slash();
             m_currentAttack++;
 
             // Loop back to one after third attack
@@ -233,5 +235,14 @@ public class HeroKnight : MonoBehaviour {
             m_animator.SetBool("noBlood", m_noBlood);
             m_animator.SetTrigger("Death");
         }
+    }
+
+    void Slash()
+    {
+        GameObject slashObject = Instantiate(slashPrefab, m_body2d.position + Vector2.up * 0.5f, Quaternion.identity);
+        
+        SwordSlash sword = slashObject.GetComponent<SwordSlash>();
+
+        sword.Slash(new Vector2(m_facingDirection, 0), 5000);
     }
 }

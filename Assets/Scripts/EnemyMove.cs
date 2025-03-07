@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeMove : MonoBehaviour
+public class EnemyMove : MonoBehaviour
 {
 
 
@@ -10,11 +10,14 @@ public class SlimeMove : MonoBehaviour
     int cur = 0;
 
     public float speed = 0.3f;
+    public int damageDealt = 2;
+    public int health;
+    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -24,18 +27,14 @@ public class SlimeMove : MonoBehaviour
     }
 
     void FixedUpdate () {
-    // Waypoint not reached yet? then move closer
+        // Waypoint not reached yet? then move closer
         if (Vector2.Distance(transform.position, waypoints[cur].position) > 0.1) {
             Vector2 p = Vector2.MoveTowards(transform.position,
-                                            waypoints[cur].position,
-                                            speed);
-            GetComponent<Rigidbody2D>().MovePosition(p);
-            Debug.Log(waypoints[cur].position);
-            Debug.Log(transform.position);
-            Debug.Log(cur);
-            Debug.Log((cur + 1) % waypoints.Length);
+                waypoints[cur].position,
+                speed);
+            rb.MovePosition(p);
         }
-    // Waypoint reached, select next one
+        // Waypoint reached, select next one
         else cur = (cur + 1) % waypoints.Length;
     }
     
@@ -48,7 +47,15 @@ public class SlimeMove : MonoBehaviour
             return;
         }
 
-        controller.ChangeHealth(-2);
+        controller.ChangeHealth(-1 * damageDealt);
     }
 
+    public void Slashed(int damage)
+    {
+        health -= damage;
+        if (health < 1)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

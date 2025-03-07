@@ -32116,13 +32116,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime_Spiked_Run_0 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5305089231544945548, guid: 2809f77ebe92e42e2876b489bd328523, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5790797169087320601, guid: 2809f77ebe92e42e2876b489bd328523, type: 3}
       insertIndex: -1
       addedObject: {fileID: 639554452}
+    - targetCorrespondingSourceObject: {fileID: 5790797169087320601, guid: 2809f77ebe92e42e2876b489bd328523, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 639554453}
   m_SourcePrefab: {fileID: 100100000, guid: 2809f77ebe92e42e2876b489bd328523, type: 3}
 --- !u!1 &639554451 stripped
 GameObject:
@@ -32156,6 +32160,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &639554453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639554451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404e5755810664c46a103d66cab435aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1810839942}
+  - {fileID: 2113526975}
+  speed: 0.1
+  damageDealt: 2
 --- !u!4 &712385968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8413529789942519730, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
@@ -33302,13 +33323,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime_Spiked_Run_0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5305089231544945548, guid: 2809f77ebe92e42e2876b489bd328523, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5790797169087320601, guid: 2809f77ebe92e42e2876b489bd328523, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1266418785522712743}
+    - targetCorrespondingSourceObject: {fileID: 5790797169087320601, guid: 2809f77ebe92e42e2876b489bd328523, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1266418785522712744}
   m_SourcePrefab: {fileID: 100100000, guid: 2809f77ebe92e42e2876b489bd328523, type: 3}
 --- !u!1 &1266418785522712741 stripped
 GameObject:
@@ -33342,6 +33367,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1266418785522712744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266418785522712741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404e5755810664c46a103d66cab435aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1546958238}
+  - {fileID: 775267258}
+  speed: 0.1
+  damageDealt: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
