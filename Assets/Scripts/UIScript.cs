@@ -8,9 +8,9 @@ using TMPro;
 public class UIScript : MonoBehaviour
 
 {
-    public TextMeshProUGUI coinsCollectedText;
     public TextMeshProUGUI doorsOpenedText;
     public TextMeshProUGUI healthText;
+    public TextMeshProUGUI cherriesText;
     public static UIScript instance { get; private set; }
     int itemNum = 0;
 
@@ -34,12 +34,12 @@ public class UIScript : MonoBehaviour
             doorsOpenedText.text = "Doors Opened: " + 2;
         }
     }
-
-    public void updateCoins()
+    
+    public void updateCherries(int x)
     {
-        itemNum++;
-        coinsCollectedText.text = "Coins Collected: "+itemNum;
+        cherriesText.text = "Cherries: " + x;
     }
+    
     public void setDoorNum(){
         Debug.Log("third door");
         doorsOpenedText.text = "Doors Opened: 3";

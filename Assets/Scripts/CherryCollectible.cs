@@ -20,6 +20,7 @@ public class CherryCollectible : MonoBehaviour
         }
 
         controller.ChangeHealth(1);
+        controller.cherriesCollected += 1;
         Destroy(gameObject);
     }
 }

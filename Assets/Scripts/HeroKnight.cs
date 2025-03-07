@@ -39,6 +39,8 @@ public class HeroKnight : MonoBehaviour {
     public AudioSource duckAudio;
 
     private UIScript control;
+
+    public int cherriesCollected = 0;
     // Use this for initialization
     void Start ()
     {
@@ -66,6 +68,7 @@ public class HeroKnight : MonoBehaviour {
         }
         control = userinterface.GetComponent<UIScript>();
         control.updateHealth(currentHealth);
+        control.updateCherries(cherriesCollected);
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
 
