@@ -39896,7 +39896,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.741714, y: -0.18363667, z: -10}
+  m_LocalPosition: {x: -11.550751, y: -0.19333458, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40961,6 +40961,30 @@ PrefabInstance:
     - target: {fileID: 2640191873720088508, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
       propertyPath: m_fontColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735693517709073888, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -327
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735693517709073888, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 221
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511770080997581495, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -289.71002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511770080997581495, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 147.01001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369647325623017001, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -289.71002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369647325623017001, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 184.01001
       objectReference: {fileID: 0}
     - target: {fileID: 7374491510246683291, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
       propertyPath: m_Camera
