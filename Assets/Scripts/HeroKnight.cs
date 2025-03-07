@@ -25,7 +25,7 @@ public class HeroKnight : MonoBehaviour {
     private float               m_delayToIdle = 0.0f;
     private float               m_rollDuration = 8.0f / 14.0f;
     private float               m_rollCurrentTime;
-
+    public GameObject userinterface;
     public int currentHealth = 5;
     public int maxHealth = 5;
     private bool isInvincible;
@@ -33,10 +33,10 @@ public class HeroKnight : MonoBehaviour {
     public float timeInvincible = 1.0f;
     public GameObject slashPrefab;
 
-
     // Use this for initialization
     void Start ()
     {
+        
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_HeroKnight>();
@@ -49,6 +49,8 @@ public class HeroKnight : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
+        UIScript control = userinterface.GetComponent<UIScript>();
+        control.updateHealth(currentHealth);
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
 
