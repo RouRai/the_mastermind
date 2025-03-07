@@ -15,6 +15,8 @@ public class duckScript : MonoBehaviour
 
     public GameObject dialogBox;
 
+    public ParticleSystem ps;
+
     float timerDisplay;
 
    
@@ -62,6 +64,11 @@ public class duckScript : MonoBehaviour
         timerDisplay = displayTime;
 
         dialogBox.SetActive(true);
+
+        if (ps != null)
+        {
+            ps.Play();
+        }
 
     }
 
