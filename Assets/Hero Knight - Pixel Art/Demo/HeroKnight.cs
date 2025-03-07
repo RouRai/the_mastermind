@@ -116,7 +116,22 @@ public class HeroKnight : MonoBehaviour {
         //Attack
         else if(Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !m_rolling)
         {
-            Slash();
+            RaycastHit2D hit = Physics2D.Raycast(m_body2d.position + Vector2.up * 0.2f, new Vector2(m_facingDirection, 0), 1.0f, LayerMask.GetMask("Enemy"));
+            if (hit.collider != null)
+
+            {
+
+                EnemyMove enemy = hit.collider.GetComponent<EnemyMove>();
+
+                if (enemy != null)
+
+                {
+
+                    enemy.Slashed(2);
+
+                } 
+
+            }
             m_currentAttack++;
 
             // Loop back to one after third attack

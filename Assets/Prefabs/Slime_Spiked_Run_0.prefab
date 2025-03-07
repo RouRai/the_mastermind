@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1391784392519972420}
   - component: {fileID: 3096040306167650557}
   - component: {fileID: 5305089231544945548}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slime_Spiked_Run_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,3 +197,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   speed: 0.1
+  damageDealt: 2
+  health: 3
