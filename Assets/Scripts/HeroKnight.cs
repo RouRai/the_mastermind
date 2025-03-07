@@ -32,7 +32,7 @@ public class HeroKnight : MonoBehaviour {
     private float invincibleTimer;
     public float timeInvincible = 1.0f;
     public GameObject slashPrefab;
-
+    Vector2 look = new Vector2(1.0f, 0.0f);
     // Use this for initialization
     void Start ()
     {
@@ -92,6 +92,35 @@ public class HeroKnight : MonoBehaviour {
             m_facingDirection = -1;
         }
 
+
+        if (Input.GetKeyDown(KeyCode.X))
+
+        {
+            if(m_facingDirection == 1){
+                look = new Vector2(1.0f, 0.0f);
+            }else if( m_facingDirection == -1){
+                look = new Vector2(-1.0f, 0.0f);
+            }
+            RaycastHit2D hit = Physics2D.Raycast(m_body2d.position + Vector2.up * 0.2f, look, 1.5f, LayerMask.GetMask("npc"));
+            //Instantiate(slashPrefab, m_body2d.position + Vector2.up * 0.5f, Quaternion.identity);
+
+            if (hit.collider != null)
+
+            {
+
+                duckScript character = hit.collider.GetComponent<duckScript>();
+
+                if (character != null)
+
+                {
+
+                    character.DisplayDialog();
+
+                }
+
+            }
+
+        }
         // Move
         if (!m_rolling )
             m_body2d.velocity = new Vector2(inputX * m_speed, m_body2d.velocity.y);
