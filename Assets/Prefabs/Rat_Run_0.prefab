@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2658746257915715311}
   - component: {fileID: 1929668329252611248}
   - component: {fileID: 2998917604446054422}
-  - component: {fileID: 4410681048564517369}
   - component: {fileID: 6200895968203894556}
-  m_Layer: 0
+  - component: {fileID: 8068685262173290634}
+  m_Layer: 8
   m_Name: Rat_Run_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,8 +136,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &4410681048564517369
-PolygonCollider2D:
+--- !u!114 &6200895968203894556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6448756716746163636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404e5755810664c46a103d66cab435aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  speed: 0.3
+  damageDealt: 1
+  health: 2
+--- !u!61 &8068685262173290634
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -165,10 +181,10 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.010084972, y: 0.43219614}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -178,31 +194,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.02, y: -0.04}
-      - {x: -0.06, y: -0.04}
-      - {x: -0.08, y: -0.049999997}
-      - {x: -0.08, y: -0.14}
-      - {x: -0.06, y: -0.17999999}
-      - {x: 0.089999996, y: -0.17999999}
-      - {x: 0.099999994, y: -0.16}
-      - {x: 0.099999994, y: -0.099999994}
-      - {x: 0.049999997, y: -0.049999997}
-  m_UseDelaunayMesh: 0
---- !u!114 &6200895968203894556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6448756716746163636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 404e5755810664c46a103d66cab435aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints: []
-  speed: 0.3
-  damageDealt: 1
-  health: 2
+  serializedVersion: 2
+  m_Size: {x: 0.14919111, y: 1.1917527}
+  m_EdgeRadius: 0
