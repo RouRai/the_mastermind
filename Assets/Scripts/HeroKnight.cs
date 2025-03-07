@@ -6,7 +6,7 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] float      m_speed = 4.0f;
     [SerializeField] float      m_jumpForce = 7.5f;
     [SerializeField] float      m_rollForce = 6.0f;
-    [SerializeField] bool       m_noBlood = true;
+    [SerializeField] bool       m_noBlood = false;
     [SerializeField] GameObject m_slideDust;
 
     private Animator            m_animator;
@@ -234,6 +234,11 @@ public class HeroKnight : MonoBehaviour {
 
     public void ChangeHealth(int amount)
     {
+        if (currentHealth < 1)
+        {
+            return;
+        }
+        
         if (amount < 0)
         {
             if (isInvincible) { return; }
@@ -251,6 +256,7 @@ public class HeroKnight : MonoBehaviour {
         {
             m_animator.SetBool("noBlood", m_noBlood);
             m_animator.SetTrigger("Death");
+            gameObject.GetComponent<HeroKnight>().enabled = false;
         }
     }
 
