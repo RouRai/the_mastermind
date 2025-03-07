@@ -26,7 +26,7 @@ public class SwordSlash : MonoBehaviour
     {
         EnemyMove enemy = other.GetComponent<EnemyMove>();
         if (enemy == null) return;
-        enemy.Slashed(2);
+        // enemy.Slashed(2);
         Destroy(gameObject);
     }
 

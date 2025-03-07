@@ -12,6 +12,7 @@ public class EnemyMove : MonoBehaviour
     public float speed = 0.3f;
     public int damageDealt = 2;
     public int health;
+    public int maxEnemyHealth;
     Rigidbody2D rb;
     public GameObject rubbleObj;
     private Animator _mAnimator;
@@ -53,12 +54,21 @@ public class EnemyMove : MonoBehaviour
         controller.ChangeHealth(-1 * damageDealt);
     }
 
-    public void Slashed(int damage)
+    public void Slashed(int damage, AudioSource audio, AudioSource duckAudio)
     {
         health -= damage;
         _mAnimator.SetTrigger("Hit");
         if (health < 1)
         {
+            if (audio != null)
+            {
+                audio.Stop();
+            }
+
+            if (duckAudio != null)
+            {
+                duckAudio.Play();
+            }
             Destroy(rubbleObj);
             Destroy(gameObject);
         }

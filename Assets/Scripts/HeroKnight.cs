@@ -33,6 +33,9 @@ public class HeroKnight : MonoBehaviour {
     public float timeInvincible = 1.0f;
     public GameObject slashPrefab;
     Vector2 look = new Vector2(1.0f, 0.0f);
+
+    public AudioSource backgroundAudio;
+    public AudioSource duckAudio;
     // Use this for initialization
     void Start ()
     {
@@ -158,7 +161,7 @@ public class HeroKnight : MonoBehaviour {
 
                 {
 
-                    enemy.Slashed(Mathf.Clamp(currentHealth - 1, 1, maxHealth - 1));
+                    enemy.Slashed(Mathf.Clamp(currentHealth - 1, 1, maxHealth - 1), backgroundAudio, duckAudio);
 
                 } 
 
