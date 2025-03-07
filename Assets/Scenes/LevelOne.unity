@@ -32673,14 +32673,62 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Doors Opened: 0'
       objectReference: {fileID: 0}
+    - target: {fileID: 1027931844741250790, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027931844741250790, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027931844741250790, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027931844741250790, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2640191873720088508, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
       propertyPath: m_text
       value: 'Coins Collected: 0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640191873720088508, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640191873720088508, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640191873720088508, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640191873720088508, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7374491510246683291, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 7979762939449711735, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979762939449711735, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979762939449711735, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979762939449711735, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8291151533974461262, guid: e63231cbf42887f40ada7b7ef9195277, type: 3}
       propertyPath: m_Name
       value: Canvas

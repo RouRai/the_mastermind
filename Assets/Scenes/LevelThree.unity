@@ -41788,7 +41788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3858721717335025712, guid: d109fd42d0c4547fb95d8bc3d625ad5c, type: 3}
       propertyPath: health
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3858721717335025712, guid: d109fd42d0c4547fb95d8bc3d625ad5c, type: 3}
       propertyPath: rubbleObj

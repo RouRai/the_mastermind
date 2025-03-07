@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class HeroKnight : MonoBehaviour {
 
@@ -52,6 +53,15 @@ public class HeroKnight : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
+        if (Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene("LevelOne");
+        }
+
+        if (currentHealth < 1)
+        {
+            return;
+        }
         UIScript control = userinterface.GetComponent<UIScript>();
         control.updateHealth(currentHealth);
         // Increase timer that controls attack combo
@@ -288,7 +298,6 @@ public class HeroKnight : MonoBehaviour {
         {
             m_animator.SetBool("noBlood", m_noBlood);
             m_animator.SetTrigger("Death");
-            gameObject.GetComponent<HeroKnight>().enabled = false;
         }
     }
 
