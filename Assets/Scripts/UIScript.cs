@@ -40,6 +40,10 @@ public class UIScript : MonoBehaviour
         itemNum++;
         coinsCollectedText.text = "Coins Collected: "+itemNum;
     }
+    public void setDoorNum(){
+        Debug.Log("third door");
+        doorsOpenedText.text = "Doors Opened: 3";
+    }
 
     public void updateHealth(int x)
     {

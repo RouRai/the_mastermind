@@ -13,7 +13,7 @@ public class EnemyMove : MonoBehaviour
     public int damageDealt = 2;
     public int health;
     Rigidbody2D rb;
-    
+    public GameObject rubbleObj;
     private Animator _mAnimator;
 
     // Start is called before the first frame update
@@ -59,6 +59,7 @@ public class EnemyMove : MonoBehaviour
         _mAnimator.SetTrigger("Hit");
         if (health < 1)
         {
+            Destroy(rubbleObj);
             Destroy(gameObject);
         }
     }
