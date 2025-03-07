@@ -32,6 +32,7 @@ public class HeroKnight : MonoBehaviour {
     private float invincibleTimer;
     public float timeInvincible = 1.0f;
     public GameObject slashPrefab;
+    private UIScript control;
 
     // Use this for initialization
     void Start ()
@@ -49,7 +50,7 @@ public class HeroKnight : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        UIScript control = userinterface.GetComponent<UIScript>();
+        control = userinterface.GetComponent<UIScript>();
         control.updateHealth(currentHealth);
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
@@ -129,7 +130,7 @@ public class HeroKnight : MonoBehaviour {
 
                 {
 
-                    enemy.Slashed(currentHealth);
+                    enemy.Slashed(Mathf.Clamp(currentHealth - 1, 1, maxHealth - 1));
 
                 } 
 
@@ -256,6 +257,7 @@ public class HeroKnight : MonoBehaviour {
         {
             m_animator.SetBool("noBlood", m_noBlood);
             m_animator.SetTrigger("Death");
+            control.updateHealth(currentHealth);
             gameObject.GetComponent<HeroKnight>().enabled = false;
         }
     }
