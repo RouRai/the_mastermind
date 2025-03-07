@@ -13,10 +13,9 @@ public class door1Script : MonoBehaviour
 
         if (controller != null)
         {
-            Debug.Log("DOORHIT");
             GameObject holder = GameObject.Find("holder");
             UIScript control = holder.GetComponent<UIScript>();
-            control.updateDoors();
+            //control.updateDoors();
             SceneManager.LoadScene("LevelTwo");
         }
 

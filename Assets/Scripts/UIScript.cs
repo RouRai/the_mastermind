@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -7,11 +8,10 @@ using TMPro;
 public class UIScript : MonoBehaviour
 
 {
-    public TextMeshProUGUI itemsCollectedText;
-    public TextMeshProUGUI doorsCollectedText;
+    public TextMeshProUGUI coinsCollectedText;
+    public TextMeshProUGUI doorsOpenedText;
     public TextMeshProUGUI healthText;
     public static UIScript instance { get; private set; }
-    int doorNum = 0;
     int itemNum = 0;
 
     void Awake()
@@ -22,16 +22,23 @@ public class UIScript : MonoBehaviour
 
     }
 
-    public void updateItems()
-    {
-        itemNum++;
-        itemsCollectedText.text = "Items Collected: "+itemNum;
+    void Update(){
+        // Create a temporary reference to the current scene.
+		Scene currentScene = SceneManager.GetActiveScene ();
+
+		// Retrieve the name of this scene.
+		string sceneName = currentScene.name;
+        if(sceneName == "LevelTwo"){
+            doorsOpenedText.text = "Doors Opened: " + 1;
+        }else if(sceneName == "LevelThree"){
+            doorsOpenedText.text = "Doors Opened: " + 2;
+        }
     }
 
-    public void updateDoors()
+    public void updateCoins()
     {
-        doorNum++;
-        doorsCollectedText.text = "Doors Collected: " + doorNum;
+        itemNum++;
+        coinsCollectedText.text = "Coins Collected: "+itemNum;
     }
 
     public void updateHealth(int x)
